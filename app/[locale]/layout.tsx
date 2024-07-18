@@ -10,7 +10,7 @@ import '../globals.css'
 
 type Props = {
   params: { locale: string }
-  searchParams: {}
+  searchParams: unknown
 }
 export function generateMetadata({ params }: Props) {
   if (params.locale === 'zh') {
