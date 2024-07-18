@@ -1,4 +1,4 @@
-"use client"
+'use client'
 
 export default function NotFound() {
   return (
@@ -8,8 +8,7 @@ export default function NotFound() {
           <h1 className="font-semibold"> 404! </h1>
           <br />
           <br />
-          Try to add &quot;en&quot; in the beginning of the path. For example:
-          localhost:3000/en
+          Try to add &quot;en&quot; in the beginning of the path. For example: localhost:3000/en
         </div>
       </body>
     </html>
