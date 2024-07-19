@@ -7,6 +7,7 @@ const fontSans = FontSans({
   variable: '--font-sans',
 })
 import '../globals.css'
+import { ThemeProvider } from '@/components/theme-provider'
 
 type Props = {
   params: { locale: string }
@@ -41,8 +42,17 @@ export default async function LocaleLayout({
       <head>
         <link rel="icon" href="/icon.ico" />
       </head>
-      <body className={cn('min-h-screen bg-background font-sans antialiased', fontSans.variable)}>
-        <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+      <body className={cn('min-h-screen  font-sans antialiased', fontSans.variable)}>
+        <NextIntlClientProvider messages={messages}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   )
