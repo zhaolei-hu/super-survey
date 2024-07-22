@@ -8,7 +8,7 @@ type HeaderProps = {
 export default function Header({ isHome }: HeaderProps) {
   const t = useTranslations('Home')
   return (
-    <header className="w-full">
+    <header className="w-full sticky top-0 bg-background z-10">
       <div className="w-full  h-14 flex box-border items-center justify-between px-8">
         <div className="flex items-center">
           {!isHome ? (

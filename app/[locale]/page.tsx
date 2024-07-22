@@ -8,7 +8,7 @@ export default function Page() {
   return (
     <main className="w-screen h-screen flex flex-col items-center">
       <Header isHome />
-      <div className="flex-grow w-2/3 flex items-center">
+      <div className="flex-grow min-h-[560px] w-2/3 flex items-center">
         <Authentication />
       </div>
     </main>
