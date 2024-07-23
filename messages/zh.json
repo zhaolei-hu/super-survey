@@ -1,13 +1,17 @@
 {
-  "Home": {
+  "Main": {
+    "title": "超级问卷"
+  },
+  "Auth": {
     "title": "超级问卷",
     "desc": "一个问卷调查平台，拥有丰富字段类型、逻辑配置、可视化管理，且支持独立部署",
-    "login": "登录",
-    "login_in": "使用邮箱登录",
     "enter": "进入系统",
     "create_account": "创建账户",
     "create_account_msg": "在下方输入邮箱创建账户",
-    "sign_in": "使用邮箱注册并登录",
-    "other_way": "其他登录方式"
+    "sign_in": "使用邮箱登录",
+    "other_way": "其他登录方式",
+    "statement": "点击继续即代表您同意我们的",
+    "privacy": "隐私政策",
+    "privacy_notice": "暂无"
   }
 }
