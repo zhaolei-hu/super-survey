@@ -9,7 +9,8 @@ const fontSans = FontSans({
 import '../globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Toaster } from '@/components/ui/toaster'
-import Header from '@/components/header'
+import Header from '@/components/header/header'
+import { HeaderMenuContextProvider } from '@/context/header-menu-context'
 
 type Props = {
   params: { locale: string }
@@ -52,11 +53,13 @@ export default async function LocaleLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <main className="flex flex-col">
-              <Header />
-              {children}
-              <Toaster />
-            </main>
+            <HeaderMenuContextProvider>
+              <main className="flex flex-col">
+                <Header />
+                {children}
+                <Toaster />
+              </main>
+            </HeaderMenuContextProvider>
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

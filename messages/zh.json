@@ -1,6 +1,9 @@
 {
-  "Main": {
-    "title": "超级问卷"
+  "Header": {
+    "title": "超级问卷",
+    "overview": "总览",
+    "surveys": "问卷",
+    "settings": "设置"
   },
   "Auth": {
     "title": "超级问卷",

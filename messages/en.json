@@ -1,6 +1,9 @@
 {
-  "Main": {
-    "title": "Super Survey"
+  "Header": {
+    "title": "Super Survey",
+    "overview": "Overview",
+    "surveys": "Surveys",
+    "settings": "Settings"
   },
   "Auth": {
     "title": "Super Survey",

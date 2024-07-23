@@ -12,7 +12,7 @@ export default function Authentication() {
   return (
     <div className="container relative h-4/5 grid grid-cols-2 items-center rounded-[0.5rem] border px-0 overflow-hidden">
       <Link
-        href={`/${activeLocale}/home`}
+        href={`/${activeLocale}/overview`}
         className={cn(buttonVariants({ variant: 'ghost' }), 'absolute right-4 top-4')}
       >
         {t('enter')}
