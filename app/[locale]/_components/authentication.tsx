@@ -29,7 +29,7 @@ export default function Authentication() {
         </div>
       </div>
       <div className="w-full p-6 box-border flex justify-center">
-        <div className="flex flex-col justify-center space-y-6 max-w-[400px]">
+        <div className="flex flex-col justify-center space-y-6 w-[400px]">
           <div className="flex flex-col space-y-2 text-center">
             <h1 className="text-2xl font-semibold tracking-tight">{t('create_account')}</h1>
             <p className="text-sm text-muted-foreground">{t('create_account_msg')}</p>

@@ -5,6 +5,7 @@ import LanguageSwitcher from './language-switcher'
 import { usePathname } from 'next/navigation'
 import { useMemo } from 'react'
 import HeaderLeft from './header-left'
+import UserNav from './user-nav'
 export default function Header() {
   const activeLocale = useLocale()
   const pathname = usePathname()
@@ -18,9 +19,10 @@ export default function Header() {
   return (
     <header className="w-full sticky top-0 bg-background z-10">
       <div className="w-full  h-14 flex box-border items-center justify-between px-8">
-        {!isAuthPage ? <HeaderLeft /> : null}
+        {!isAuthPage ? <HeaderLeft /> : <div></div>}
         {/* <HeaderLeft /> */}
-        <div className="flex space-x-4">
+        <div className="flex items-center space-x-4">
+          <UserNav />
           <LanguageSwitcher />
           <ThemeSwitcher />
         </div>
