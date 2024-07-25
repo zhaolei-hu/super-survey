@@ -12,3 +12,6 @@ export const config = {
   // Match only internationalized pathnames
   matcher: ['/', '/(zh|en)/:path*'],
 }
+
+// next-auth
+export { auth as middleware } from '@/auth'
