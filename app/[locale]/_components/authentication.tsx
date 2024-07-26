@@ -1,18 +1,17 @@
 import Logo from '@/components/logo'
 import { buttonVariants } from '@/components/ui/button'
-import { useLocale, useTranslations } from 'next-intl'
+import { useTranslations } from 'next-intl'
 import PrivacyLink from './privacy-link'
 import { cn } from '@/lib/utils'
-import Link from 'next/link'
 import AuthForm from './auth-form'
+import { Link } from '@/navigation'
 
 export default function Authentication() {
-  const activeLocale = useLocale()
   const t = useTranslations('Auth')
   return (
     <div className="container relative h-4/5 grid grid-cols-2 items-center rounded-[0.5rem] border px-0 overflow-hidden">
       <Link
-        href={`/${activeLocale}/overview`}
+        href="/overview"
         className={cn(buttonVariants({ variant: 'ghost' }), 'absolute right-4 top-4')}
       >
         {t('enter')}

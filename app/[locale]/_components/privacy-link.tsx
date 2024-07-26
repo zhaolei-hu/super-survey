@@ -2,7 +2,7 @@
 
 import { useToast } from '@/components/ui/use-toast'
 import { useTranslations } from 'next-intl'
-import Link from 'next/link'
+import { Link } from '@/navigation'
 
 export default function PrivacyLink() {
   const { toast } = useToast()

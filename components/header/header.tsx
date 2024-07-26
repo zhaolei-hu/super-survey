@@ -19,8 +19,8 @@ export default function Header() {
   return (
     <header className="w-full sticky top-0 bg-background z-10">
       <div className="w-full  h-14 flex box-border items-center justify-between px-8">
-        {!isAuthPage ? <HeaderLeft /> : <div></div>}
-        {/* <HeaderLeft /> */}
+        {/* {!isAuthPage ? <HeaderLeft /> : <div></div>} */}
+        <HeaderLeft />
         <div className="flex items-center space-x-4">
           <UserNav />
           <LanguageSwitcher />

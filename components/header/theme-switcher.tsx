@@ -2,7 +2,7 @@
 import { useTheme } from 'next-themes'
 import { BsSun, BsMoon } from 'react-icons/bs'
 export default function ThemeSwitcher() {
-  const { theme, setTheme } = useTheme()
+  const { setTheme } = useTheme()
   return (
     <div className="cursor-pointer hover:scale-[1.15] active:scale-105 transition-all h-6">
       <BsSun

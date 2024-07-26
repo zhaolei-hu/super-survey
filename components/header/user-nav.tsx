@@ -9,15 +9,13 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { useLocale } from 'next-intl'
-import { useRouter } from 'next/navigation'
+import { useRouter } from '@/navigation'
 
 export default function UserNav() {
-  const activeLocale = useLocale()
   const router = useRouter()
   const handleLogOut = () => {
     // todo... logout
-    router.replace(`/${activeLocale}`)
+    router.replace(`/`)
   }
   return (
     <DropdownMenu>
@@ -41,14 +39,14 @@ export default function UserNav() {
         <DropdownMenuGroup>
           <DropdownMenuItem
             onClick={() => {
-              router.push(`/${activeLocale}/settings?tab=profile`)
+              router.push(`/settings?tab=profile`)
             }}
           >
             Profile
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={() => {
-              router.push(`/${activeLocale}/settings?tab=account`)
+              router.push(`/settings?tab=account`)
             }}
           >
             Account

@@ -1,6 +1,6 @@
 'use client'
+import { usePathname, useRouter } from '@/navigation'
 import { useLocale } from 'next-intl'
-import { usePathname, useRouter } from 'next/navigation'
 
 export default function LanguageSwitcher() {
   const localeActive = useLocale()
@@ -8,8 +8,8 @@ export default function LanguageSwitcher() {
   const pathname = usePathname()
   const onChangeLanguage = () => {
     const nextLocale = localeActive === 'en' ? 'zh' : 'en'
-    const newPath = pathname.replace(/^\/(en|zh)/, `/${nextLocale}/`)
-    router.replace(newPath, {
+    router.replace(pathname, {
+      locale: nextLocale,
       scroll: false,
     })
   }

@@ -13,16 +13,18 @@ type HeaderMenuContextType = {
 const menuKeys = ['overview', 'surveys', 'settings']
 const HeaderMenuContext = createContext<HeaderMenuContextType | null>(null)
 const HeaderMenuContextProvider = ({ children }: HeaderMenuContexxtProviderProps) => {
-  const [active, setActive] = useState('overview')
+  const [active, setActive] = useState('')
   const pathname = usePathname()
   useEffect(() => {
+    let key = ''
     for (let i = 0; i < menuKeys.length; i++) {
       const reg = new RegExp(`\/${menuKeys[i]}$`)
       if (reg.test(pathname)) {
-        setActive(menuKeys[i])
+        key = menuKeys[i]
         break
       }
     }
+    setActive(key)
   }, [pathname])
   return (
     <HeaderMenuContext.Provider value={{ active, setActive }}>
