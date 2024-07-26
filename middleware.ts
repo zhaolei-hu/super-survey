@@ -14,4 +14,4 @@ export const config = {
 }
 
 // next-auth
-export { auth as middleware } from '@/auth'
+export { auth } from '@/auth'
