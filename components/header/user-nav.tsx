@@ -10,12 +10,12 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { useRouter } from '@/navigation'
+import { signOut } from 'next-auth/react'
 
 export default function UserNav() {
   const router = useRouter()
-  const handleLogOut = () => {
-    // todo... logout
-    router.replace(`/`)
+  const handleLogOut = async () => {
+    await signOut()
   }
   return (
     <DropdownMenu>

@@ -6,11 +6,11 @@ const fontSans = FontSans({
   subsets: ['latin'],
   variable: '--font-sans',
 })
-import '../globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Toaster } from '@/components/ui/toaster'
 import Header from '@/components/header/header'
 import { HeaderMenuContextProvider } from '@/context/header-menu-context'
+import { SessionProvider } from 'next-auth/react'
 
 type Props = {
   params: { locale: string }
@@ -53,13 +53,15 @@ export default async function LocaleLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <HeaderMenuContextProvider>
-              <main className="flex flex-col">
-                <Header />
-                {children}
-                <Toaster />
-              </main>
-            </HeaderMenuContextProvider>
+            <SessionProvider>
+              <HeaderMenuContextProvider>
+                <main className="flex flex-col">
+                  <Header />
+                  {children}
+                  <Toaster />
+                </main>
+              </HeaderMenuContextProvider>
+            </SessionProvider>
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

@@ -10,7 +10,16 @@ const intlMiddleware = createMiddleware({
   defaultLocale: 'en',
 })
 const authMiddleware = auth((req) => {
-  // console.log('auth:', req.auth)
+  console.log('auth:', req.auth)
+  // req.auth:
+  // {
+  //   user: {
+  //     name: '',
+  //     email: '',
+  //     image: ''
+  //   },
+  //   expires: ''
+  // }
   if (req.auth) {
     return intlMiddleware(req)
   }

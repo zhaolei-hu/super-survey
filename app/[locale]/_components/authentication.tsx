@@ -1,21 +1,28 @@
 import Logo from '@/components/logo'
 import { buttonVariants } from '@/components/ui/button'
-import { useTranslations } from 'next-intl'
 import PrivacyLink from './privacy-link'
 import { cn } from '@/lib/utils'
 import AuthForm from './auth-form'
 import { Link } from '@/navigation'
-
-export default function Authentication() {
-  const t = useTranslations('Auth')
+import { auth } from '@/auth'
+import { getTranslations } from 'next-intl/server'
+const fetchAuth = async () => {
+  const session = await auth()
+  return session
+}
+export default async function Authentication() {
+  const session = await fetchAuth()
+  const t = await getTranslations('Auth')
   return (
     <div className="container relative h-4/5 grid grid-cols-2 items-center rounded-[0.5rem] border px-0 overflow-hidden">
-      <Link
-        href="/overview"
-        className={cn(buttonVariants({ variant: 'ghost' }), 'absolute right-4 top-4')}
-      >
-        {t('enter')}
-      </Link>
+      {session && session.user && (
+        <Link
+          href="/overview"
+          className={cn(buttonVariants({ variant: 'ghost' }), 'absolute right-4 top-4')}
+        >
+          {t('enter')}
+        </Link>
+      )}
       <div className="w-full h-full bg-zinc-900 p-10 dark:border-r text-white flex flex-col justify-between">
         <div className="flex items-center font-medium">
           <div className="w-6 h-6 mr-3">
