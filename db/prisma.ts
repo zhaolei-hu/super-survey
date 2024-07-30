@@ -1,5 +1,9 @@
 import { PrismaClient } from '@prisma/client'
 import dayjs from 'dayjs'
+import { Pool } from '@neondatabase/serverless'
+import { PrismaNeon } from '@prisma/adapter-neon'
+export const runtime = 'edge'
+
 // models that do not require soft delete
 const notRequireSoftDeleteModels = [
   'User',
@@ -10,7 +14,11 @@ const notRequireSoftDeleteModels = [
 ]
 
 const prismaClientSingleton = () => {
-  const prismaClient = new PrismaClient()
+  const neon = new Pool({
+    connectionString: process.env.POSTGRES_PRISMA_URL,
+  })
+  const adapter = new PrismaNeon(neon)
+  const prismaClient = new PrismaClient({ adapter })
   const modelMap = {
     User: prismaClient.user,
     Account: prismaClient.account,

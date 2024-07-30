@@ -10,10 +10,10 @@ import {
 } from '@/components/ui/dropdown-menu'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { useRouter } from '@/navigation'
-import { signOut } from 'next-auth/react'
-
+import { signOut, useSession } from 'next-auth/react'
 export default function UserNav() {
   const router = useRouter()
+  const session = useSession()
   const handleLogOut = async () => {
     await signOut()
   }
@@ -24,8 +24,8 @@ export default function UserNav() {
           <span className="font-medium text-sm">L</span>
         </div> */}
         <Avatar className="w-8 h-8 cursor-pointer">
-          <AvatarImage src="https://ui.shadcn.com/avatars/01.png" alt="@shadcn" />
-          <AvatarFallback>L</AvatarFallback>
+          <AvatarImage src={session.data?.user?.image ?? ''} alt="@shadcn" />
+          <AvatarFallback>{session.data?.user?.name?.slice(0, 1)}</AvatarFallback>
         </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56" align="end" forceMount>

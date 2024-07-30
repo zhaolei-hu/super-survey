@@ -17,6 +17,22 @@ export default function AuthForm() {
   const emailChange = (event: ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value)
   }
+  const signInWithEmail = async () => {
+    // () => {
+    //   toast({
+    //     description: t('email_notice'),
+    //     duration: 2000,
+    //   })
+    // }
+    setIsLoading(true)
+    const formData = new FormData()
+    formData.set('email', email)
+    await signIn('resend', {
+      callbackUrl: '/overview',
+      email,
+    })
+    setIsLoading(false)
+  }
   const signInWithGitHub = async () => {
     setIsLoading(true)
     await signIn('github', {
@@ -44,14 +60,12 @@ export default function AuthForm() {
             onChange={emailChange}
           />
         </div>
-        <Button
-          onClick={() => {
-            toast({
-              description: t('email_notice'),
-              duration: 2000,
-            })
-          }}
-        >
+        <Button onClick={signInWithEmail}>
+          {isLoading ? (
+            <FaSpinner className="mr-2 h-4 w-4 animate-spin" />
+          ) : (
+            <FaGithub className="mr-2 h-4 w-4" />
+          )}{' '}
           {t('sign_in')}
         </Button>
       </div>
