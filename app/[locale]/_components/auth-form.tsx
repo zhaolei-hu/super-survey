@@ -7,10 +7,10 @@ import { Label } from '@/components/ui/label'
 import { useTranslations } from 'next-intl'
 import { ChangeEvent, useState } from 'react'
 import { FaSpinner, FaGithub } from 'react-icons/fa'
-import { useToast } from '@/components/ui/use-toast'
+// import { useToast } from '@/components/ui/use-toast'
 export default function AuthForm() {
   const t = useTranslations('Auth')
-  const { toast } = useToast()
+  // const { toast } = useToast()
   const [isLoading, setIsLoading] = useState(false)
   // email
   const [email, setEmail] = useState('')
