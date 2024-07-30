@@ -1,0 +1,31 @@
+{
+  "Header": {
+    "title": "超级问卷",
+    "overview": "总览",
+    "surveys": "问卷",
+    "settings": "设置"
+  },
+  "NotFound": {
+    "title": "页面未找到",
+    "desc": "抱歉，我们找不到您正在访问的页面",
+    "back": "返回首页"
+  },
+  "Auth": {
+    "title": "超级问卷",
+    "desc": "一个问卷调查平台，拥有丰富字段类型、逻辑配置、可视化管理，且支持独立部署",
+    "enter": "进入系统",
+    "create_account": "创建账户",
+    "create_account_msg": "在下方输入邮箱创建账户",
+    "sign_in": "使用邮箱登录",
+    "email_notice": "暂不支持，请使用 GitHub 认证",
+    "other_way": "其他登录方式",
+    "statement": "点击继续即代表您同意我们的",
+    "privacy": "隐私政策",
+    "privacy_notice": "暂无"
+  },
+  "Error": {
+    "title": "出了些糟糕的问题",
+    "code": "错误标识符:",
+    "back": "返回首页"
+  }
+}

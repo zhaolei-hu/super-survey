@@ -1,0 +1,31 @@
+{
+  "Header": {
+    "title": "Super Survey",
+    "overview": "Overview",
+    "surveys": "Surveys",
+    "settings": "Settings"
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "desc": "Sorry, we couldn't find the page you're looking for.",
+    "back": "Back to home"
+  },
+  "Auth": {
+    "title": "Super Survey",
+    "desc": "A questionnaire survey platform with rich field types, logical configuration, visual management, and support for independent deployment",
+    "enter": "Access System",
+    "create_account": "Create an account",
+    "create_account_msg": "Enter your email below to create your account",
+    "sign_in": "Sign In With Email",
+    "email_notice": "Not supported yet, please use GitHub authentication",
+    "other_way": "OR CONTINUE WITH",
+    "statement": "By clicking continue, you agree to our ",
+    "privacy": "Privacy Policy",
+    "privacy_notice": "nothing"
+  },
+  "Error": {
+    "title": "Something went wrong",
+    "code": "Unique error code:",
+    "back": "Back to home"
+  }
+}
