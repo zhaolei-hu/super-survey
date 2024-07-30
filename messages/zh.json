@@ -22,5 +22,10 @@
     "statement": "点击继续即代表您同意我们的",
     "privacy": "隐私政策",
     "privacy_notice": "暂无"
+  },
+  "Error": {
+    "title": "出了些糟糕的问题",
+    "code": "错误标识符:",
+    "back": "返回首页"
   }
 }

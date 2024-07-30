@@ -22,5 +22,10 @@
     "statement": "By clicking continue, you agree to our ",
     "privacy": "Privacy Policy",
     "privacy_notice": "nothing"
+  },
+  "Error": {
+    "title": "Something went wrong",
+    "code": "Unique error code:",
+    "back": "Back to home"
   }
 }
