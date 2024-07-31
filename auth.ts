@@ -8,6 +8,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
     GitHub,
     Resend({
+      // 在resend主页配置domain的地址要放到这里的from这里，不然不会从验证过的domain发送邮件
       from: process.env.EMAIL_FROM,
     }),
   ],

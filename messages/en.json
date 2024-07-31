@@ -17,8 +17,12 @@
     "create_account": "Create an account",
     "create_account_msg": "Enter your email below to create your account",
     "sign_in": "Sign In With Email",
-    "email_notice": "Not supported yet, please use GitHub authentication",
+    "emial_wrong_title": "Incorrect",
+    "email_notice": "Please enter the correct email format",
     "other_way": "OR CONTINUE WITH",
+    "sign_out_title": "Has Logged",
+    "sign_out_notice": "You are logged in, do you want to log out and log in again?",
+    "sign_out_action": "Confirm",
     "statement": "By clicking continue, you agree to our ",
     "privacy": "Privacy Policy",
     "privacy_notice": "nothing"
@@ -27,5 +31,10 @@
     "title": "Something went wrong",
     "code": "Unique error code:",
     "back": "Back to home"
+  },
+  "UserNav": {
+    "profile": "Profile",
+    "account": "Account",
+    "sign_out": "Log Out"
   }
 }

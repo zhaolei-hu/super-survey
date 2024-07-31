@@ -1,29 +1,55 @@
 'use client'
 // @/auth signIn method used for server component
-import { signIn } from 'next-auth/react'
+import { signIn, useSession, signOut } from 'next-auth/react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { useTranslations } from 'next-intl'
 import { ChangeEvent, useState } from 'react'
 import { FaSpinner, FaGithub } from 'react-icons/fa'
-// import { useToast } from '@/components/ui/use-toast'
+import { useToast } from '@/components/ui/use-toast'
+import { ToastAction } from '@/components/ui/toast'
 export default function AuthForm() {
+  const session = useSession()
   const t = useTranslations('Auth')
-  // const { toast } = useToast()
+  const { toast } = useToast()
   const [isLoading, setIsLoading] = useState(false)
   // email
   const [email, setEmail] = useState('')
   const emailChange = (event: ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value)
   }
+  const handleSignOut = async () => {
+    toast({
+      variant: 'destructive',
+      title: t('sign_out_title'),
+      description: t('sign_out_notice'),
+      duration: 5000,
+      action: (
+        <ToastAction
+          altText="log out"
+          onClick={() => {
+            signOut()
+          }}
+        >
+          {t('sign_out_action')}
+        </ToastAction>
+      ),
+    })
+  }
   const signInWithEmail = async () => {
-    // () => {
-    //   toast({
-    //     description: t('email_notice'),
-    //     duration: 2000,
-    //   })
-    // }
+    const reg = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+    if (!reg.test(email)) {
+      toast({
+        title: t('emial_wrong_title'),
+        description: t('email_notice'),
+        duration: 2000,
+      })
+      return
+    }
+    if (session && session.data && session.data.user) {
+      return handleSignOut()
+    }
     setIsLoading(true)
     const formData = new FormData()
     formData.set('email', email)
@@ -34,6 +60,9 @@ export default function AuthForm() {
     setIsLoading(false)
   }
   const signInWithGitHub = async () => {
+    if (session && session.data && session.data.user) {
+      return handleSignOut()
+    }
     setIsLoading(true)
     await signIn('github', {
       callbackUrl: '/overview',

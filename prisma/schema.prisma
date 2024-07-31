@@ -9,6 +9,7 @@ datasource db {
   directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
+// 多种方式比如分别使用Github/email认证登录的，如果email一样，则会被认定为同一个User
 model User {
   id            String          @id @default(cuid())
   name          String?

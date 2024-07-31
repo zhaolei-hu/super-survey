@@ -21,7 +21,7 @@ export default function Header() {
   }, [activeLocale, pathname])
   return (
     <header className="w-full sticky top-0 bg-background z-10">
-      <div className="w-full  h-14 flex box-border items-center justify-between px-8">
+      <div className="w-full h-16 flex box-border items-center justify-between px-8 border-b">
         {!isAuthPage && session.data && session.data.user ? <HeaderLeft /> : <div></div>}
         {/* <HeaderLeft /> */}
         <div className="flex items-center space-x-4">

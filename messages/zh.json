@@ -17,8 +17,12 @@
     "create_account": "创建账户",
     "create_account_msg": "在下方输入邮箱创建账户",
     "sign_in": "使用邮箱登录",
-    "email_notice": "暂不支持，请使用 GitHub 认证",
+    "emial_wrong_title": "格式错误",
+    "email_notice": "请输入正确的邮箱格式",
     "other_way": "其他登录方式",
+    "sign_out_title": "已登录",
+    "sign_out_notice": "您已登录，是否要先退出并重新登录？",
+    "sign_out_action": "退出",
     "statement": "点击继续即代表您同意我们的",
     "privacy": "隐私政策",
     "privacy_notice": "暂无"
@@ -27,5 +31,10 @@
     "title": "出了些糟糕的问题",
     "code": "错误标识符:",
     "back": "返回首页"
+  },
+  "UserNav": {
+    "profile": "个人资料",
+    "account": "账号",
+    "sign_out": "退出登录"
   }
 }
