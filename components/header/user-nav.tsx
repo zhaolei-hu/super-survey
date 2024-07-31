@@ -48,14 +48,14 @@ export default function UserNav() {
         <DropdownMenuGroup>
           <DropdownMenuItem
             onClick={() => {
-              router.push(`/settings?tab=profile`)
+              router.push(`/settings`)
             }}
           >
             {t('profile')}
           </DropdownMenuItem>
           <DropdownMenuItem
             onClick={() => {
-              router.push(`/settings?tab=account`)
+              router.push(`/settings/account`)
             }}
           >
             {t('account')}

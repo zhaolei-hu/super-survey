@@ -36,5 +36,9 @@
     "profile": "个人资料",
     "account": "账号",
     "sign_out": "退出登录"
+  },
+  "Settings": {
+    "title": "设置",
+    "desc": "管理您的帐户设置并设置偏好"
   }
 }

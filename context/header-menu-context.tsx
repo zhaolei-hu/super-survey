@@ -18,7 +18,7 @@ const HeaderMenuContextProvider = ({ children }: HeaderMenuContexxtProviderProps
   useEffect(() => {
     let key = ''
     for (let i = 0; i < menuKeys.length; i++) {
-      const reg = new RegExp(`\/${menuKeys[i]}$`)
+      const reg = new RegExp(`\/${menuKeys[i]}`)
       if (reg.test(pathname)) {
         key = menuKeys[i]
         break

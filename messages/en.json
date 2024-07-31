@@ -36,5 +36,9 @@
     "profile": "Profile",
     "account": "Account",
     "sign_out": "Log Out"
+  },
+  "Settings": {
+    "title": "Settings",
+    "desc": "Manage your account settings and set preferences"
   }
 }
