@@ -8,10 +8,10 @@ export default function HeaderLeft() {
   const t = useTranslations('Header')
   return (
     <div className="flex items-center">
-      <div className="w-7 h-7 mr-3">
+      <div className="w-6 h-6 mr-3">
         <Logo />
       </div>
-      <span className="text-2xl font-bold mr-12">{t('title')}</span>
+      <span className="text-lg font-bold mr-12">{t('title')}</span>
       <MainNav />
     </div>
   )

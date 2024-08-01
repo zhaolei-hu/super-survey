@@ -33,6 +33,7 @@ export default function SidebarNav() {
             noLocalePathName === item.href
               ? 'bg-muted hover:bg-muted'
               : 'hover:bg-transparent hover:underline',
+            'justify-start',
           )}
         >
           {item.title}

@@ -39,6 +39,16 @@
   },
   "Settings": {
     "title": "Settings",
-    "desc": "Manage your account settings and set preferences"
+    "desc": "Manage your account settings and set preferences",
+    "Profile": {
+      "title": "Profile",
+      "desc": "This is how others will see you on the site.",
+      "nothing": "This is empty, you can implement it yourself."
+    },
+    "Account": {
+      "title": "Account",
+      "desc": "Update your account settings. Set your preferred language and timezone.",
+      "nothing": "This is empty, you can implement it yourself."
+    }
   }
 }

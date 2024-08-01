@@ -23,19 +23,19 @@ export default function UserNav() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         {session.data && session.data.user && session.data.user.image ? (
-          <Avatar className="w-8 h-8 cursor-pointer">
+          <Avatar className="w-6 h-6 cursor-pointer">
             <AvatarImage src={session.data?.user?.image ?? ''} alt="@shadcn" />
             <AvatarFallback>{session.data?.user?.name?.slice(0, 1)}</AvatarFallback>
           </Avatar>
         ) : (
-          <div className="cursor-pointer w-8 h-8 bg-zinc-900 text-white rounded-full flex justify-center items-center">
+          <div className="cursor-pointer w-6 h-6 bg-zinc-900 text-white rounded-full flex justify-center items-center">
             <span className="font-medium text-sm">
               {session.data?.user?.name?.slice(0, 1) ?? session.data?.user?.email?.slice(0, 1)}
             </span>
           </div>
         )}
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-56" align="end" forceMount>
+      <DropdownMenuContent className="w-52" align="end" forceMount>
         <DropdownMenuLabel className="font-normal">
           <div className="flex flex-col space-y-1">
             <p className="text-sm font-medium leading-none">{session.data?.user?.name ?? '-'}</p>
@@ -47,6 +47,7 @@ export default function UserNav() {
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem
+            className="text-sm"
             onClick={() => {
               router.push(`/settings`)
             }}
@@ -54,6 +55,7 @@ export default function UserNav() {
             {t('profile')}
           </DropdownMenuItem>
           <DropdownMenuItem
+            className="text-sm"
             onClick={() => {
               router.push(`/settings/account`)
             }}
@@ -62,7 +64,9 @@ export default function UserNav() {
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuItem onClick={handleLogOut}>{t('sign_out')}</DropdownMenuItem>
+        <DropdownMenuItem className="text-sm" onClick={handleLogOut}>
+          {t('sign_out')}
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   )

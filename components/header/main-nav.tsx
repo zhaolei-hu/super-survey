@@ -15,7 +15,7 @@ export default function MainNav() {
           key={menuKey}
           href={`/${menuKey}`}
           className={cn(
-            'text-base font-medium transition-colors text-muted-foreground hover:text-primary',
+            'text-sm font-medium transition-colors text-muted-foreground hover:text-primary',
             {
               'text-primary': active === menuKey,
             },
