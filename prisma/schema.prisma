@@ -85,3 +85,24 @@ model Authenticator {
   @@id([userId, credentialID])
   @@map("authenticators")
 }
+
+// 问卷
+model Survey {
+  id String          @id @default(cuid())
+  name String
+  status SurveyStatus @default(UNPUBLISH)
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  deleted Boolean @default(false)
+
+  @@map("surveys")
+}
+
+enum SurveyStatus {
+  UNPUBLISH
+  RUNNING
+  FINISHED
+
+  @@map("survey_status_enum")
+}

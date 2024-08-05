@@ -18,6 +18,7 @@ export default async function Authentication() {
       {session && session.user && (
         <Link
           href="/overview"
+          prefetch
           className={cn(buttonVariants({ variant: 'ghost' }), 'absolute right-4 top-4')}
         >
           {t('enter')}

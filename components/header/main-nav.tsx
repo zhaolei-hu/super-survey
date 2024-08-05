@@ -14,6 +14,7 @@ export default function MainNav() {
         <Link
           key={menuKey}
           href={`/${menuKey}`}
+          prefetch
           className={cn(
             'text-sm font-medium transition-colors text-muted-foreground hover:text-primary',
             {
