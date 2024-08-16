@@ -9,6 +9,7 @@ export function ProgressBarLink({ href, children, ...rest }: ComponentProps<type
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
     start()
+    // next/router是transitions，使用startTransition可以实现页面加载后执行done中的setState操作
     startTransition(() => {
       router.push(href.toString())
       done()

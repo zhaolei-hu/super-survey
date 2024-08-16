@@ -9,11 +9,10 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { ProgressBarLink, useProgressRouter } from '@/components/progress-bar'
+import { ProgressBarLink } from '@/components/progress-bar'
 import { signOut, useSession } from 'next-auth/react'
 import { useTranslations } from 'next-intl'
 export default function UserNav() {
-  const router = useProgressRouter()
   const session = useSession()
   const t = useTranslations('UserNav')
   const handleLogOut = async () => {
