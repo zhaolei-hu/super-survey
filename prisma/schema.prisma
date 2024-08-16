@@ -87,22 +87,22 @@ model Authenticator {
 }
 
 // 问卷
-model Survey {
-  id String          @id @default(cuid())
-  name String
-  status SurveyStatus @default(UNPUBLISH)
+// model Survey {
+//   id String          @id @default(cuid())
+//   name String
+//   status SurveyStatus @default(UNPUBLISH)
 
-  createdAt DateTime @default(now()) @map("created_at")
-  updatedAt DateTime @updatedAt @map("updated_at")
-  deleted Boolean @default(false)
+//   createdAt DateTime @default(now()) @map("created_at")
+//   updatedAt DateTime @updatedAt @map("updated_at")
+//   deleted Boolean @default(false)
 
-  @@map("surveys")
-}
+//   @@map("surveys")
+// }
 
-enum SurveyStatus {
-  UNPUBLISH
-  RUNNING
-  FINISHED
+// enum SurveyStatus {
+//   UNPUBLISH
+//   RUNNING
+//   FINISHED
 
-  @@map("survey_status_enum")
-}
+//   @@map("survey_status_enum")
+// }
