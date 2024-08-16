@@ -9,11 +9,11 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { useRouter } from '@/navigation'
+import { ProgressBarLink, useProgressRouter } from '@/components/progress-bar'
 import { signOut, useSession } from 'next-auth/react'
 import { useTranslations } from 'next-intl'
 export default function UserNav() {
-  const router = useRouter()
+  const router = useProgressRouter()
   const session = useSession()
   const t = useTranslations('UserNav')
   const handleLogOut = async () => {
@@ -46,25 +46,19 @@ export default function UserNav() {
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem
-            className="text-sm"
-            onClick={() => {
-              router.push(`/settings`)
-            }}
-          >
-            {t('profile')}
+          <DropdownMenuItem className="text-sm p-0">
+            <ProgressBarLink href="/settings" className="w-full h-full px-2 py-1.5">
+              {t('profile')}
+            </ProgressBarLink>
           </DropdownMenuItem>
-          <DropdownMenuItem
-            className="text-sm"
-            onClick={() => {
-              router.push(`/settings/account`)
-            }}
-          >
-            {t('account')}
+          <DropdownMenuItem className="text-sm  p-0">
+            <ProgressBarLink href="/settings/account" className="w-full h-full px-2 py-1.5">
+              {t('account')}
+            </ProgressBarLink>
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuItem className="text-sm" onClick={handleLogOut}>
+        <DropdownMenuItem className="text-sm cursor-pointer" onClick={handleLogOut}>
           {t('sign_out')}
         </DropdownMenuItem>
       </DropdownMenuContent>

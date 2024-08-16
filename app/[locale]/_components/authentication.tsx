@@ -3,7 +3,7 @@ import { buttonVariants } from '@/components/ui/button'
 import PrivacyLink from './privacy-link'
 import { cn } from '@/lib/utils'
 import AuthForm from './auth-form'
-import { Link } from '@/navigation'
+import { ProgressBarLink } from '@/components/progress-bar'
 import { auth } from '@/auth'
 import { getTranslations } from 'next-intl/server'
 const fetchAuth = async () => {
@@ -16,13 +16,13 @@ export default async function Authentication() {
   return (
     <div className="container relative h-4/5 grid grid-cols-2 items-center rounded-[0.5rem] border px-0 overflow-hidden">
       {session && session.user && (
-        <Link
+        <ProgressBarLink
           href="/overview"
           prefetch
           className={cn(buttonVariants({ variant: 'ghost' }), 'absolute right-4 top-4')}
         >
           {t('enter')}
-        </Link>
+        </ProgressBarLink>
       )}
       <div className="w-full h-full bg-zinc-900 p-10 dark:border-r text-white flex flex-col justify-between">
         <div className="flex items-center font-medium">

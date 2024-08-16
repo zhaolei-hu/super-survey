@@ -3,7 +3,7 @@
 import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { locales } from '@/messages/config'
-import { Link } from '@/navigation'
+import { ProgressBarLink } from '@/components/progress-bar'
 import { useTranslations } from 'next-intl'
 import { usePathname } from 'next/navigation'
 
@@ -25,7 +25,7 @@ export default function SidebarNav() {
   return (
     <div className="flex flex-col space-y-1">
       {sidebarNavItems.map((item) => (
-        <Link
+        <ProgressBarLink
           href={item.href}
           key={item.href}
           className={cn(
@@ -37,7 +37,7 @@ export default function SidebarNav() {
           )}
         >
           {item.title}
-        </Link>
+        </ProgressBarLink>
       ))}
     </div>
   )
