@@ -2,7 +2,7 @@ import { Separator } from '@/components/ui/separator'
 import { useTranslations } from 'next-intl'
 
 export default function Page() {
-  const t = useTranslations('Settings.Profile')
+  const t = useTranslations('Settings.Account')
   return (
     <div className="flex flex-col space-y-6">
       <div>

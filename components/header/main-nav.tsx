@@ -2,8 +2,8 @@
 
 import { useHeaderMenuContext, menuKeys } from '@/context/header-menu-context'
 import { cn } from '@/lib/utils'
-import { Link } from '@/navigation'
 import { useTranslations } from 'next-intl'
+import { ProgressBarLink } from '../progress-bar'
 
 export default function MainNav() {
   const t = useTranslations('Header')
@@ -11,18 +11,19 @@ export default function MainNav() {
   return (
     <nav className="flex items-center space-x-6">
       {menuKeys.map((menuKey) => (
-        <Link
+        <ProgressBarLink
           key={menuKey}
           href={`/${menuKey}`}
+          prefetch
           className={cn(
-            'text-base font-medium transition-colors text-muted-foreground hover:text-primary',
+            'text-sm font-medium transition-colors text-muted-foreground hover:text-primary',
             {
               'text-primary': active === menuKey,
             },
           )}
         >
           {t(menuKey)}
-        </Link>
+        </ProgressBarLink>
       ))}
     </nav>
   )
