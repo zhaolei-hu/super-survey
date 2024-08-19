@@ -34,6 +34,7 @@ export const ProgressBarContextProvider = ({ children }: ProgressBarContextProvi
   const width = useMotionTemplate`${progress.value}%`
   return (
     <ProgressBarContext.Provider value={progress}>
+      {children}
       <AnimatePresence onExitComplete={progress.reset}>
         {progress.state !== 'complete' && (
           <motion.div
@@ -43,7 +44,6 @@ export const ProgressBarContextProvider = ({ children }: ProgressBarContextProvi
           />
         )}
       </AnimatePresence>
-      {children}
     </ProgressBarContext.Provider>
   )
 }

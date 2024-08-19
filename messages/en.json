@@ -10,6 +10,9 @@
     "desc": "Sorry, we couldn't find the page you're looking for.",
     "back": "Back to home"
   },
+  "GlobalLoading": {
+    "desc": "Switching..."
+  },
   "Auth": {
     "title": "Super Survey",
     "desc": "A questionnaire survey platform with rich field types, logical configuration, visual management, and support for independent deployment",
@@ -52,9 +55,14 @@
     }
   },
   "Overview": {
-    "title": "Dashboard"
+    "title": "Dashboard",
+    "search": "Search"
   },
   "Surveys": {
     "title": "Surveys"
+  },
+  "Date": {
+    "placeholder": "Pick a date",
+    "format": "LLL dd,y"
   }
 }

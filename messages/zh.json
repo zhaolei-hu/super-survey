@@ -10,6 +10,9 @@
     "desc": "抱歉，我们找不到您正在访问的页面",
     "back": "返回首页"
   },
+  "GlobalLoading": {
+    "desc": "切换中..."
+  },
   "Auth": {
     "title": "超级问卷",
     "desc": "一个问卷调查平台，拥有丰富字段类型、逻辑配置、可视化管理，且支持独立部署",
@@ -52,9 +55,14 @@
     }
   },
   "Overview": {
-    "title": "仪表盘"
+    "title": "仪表盘",
+    "search": "查询"
   },
   "Surveys": {
     "title": "问卷"
+  },
+  "Date": {
+    "placeholder": "选择日期",
+    "format": "yyyy/MM/dd"
   }
 }

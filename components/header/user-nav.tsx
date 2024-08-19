@@ -23,7 +23,12 @@ export default function UserNav() {
   }
   return (
     <DropdownMenu open={open}>
-      <DropdownMenuTrigger asChild onClick={() => { setOpen(true)}}>
+      <DropdownMenuTrigger
+        asChild
+        onClick={() => {
+          setOpen(true)
+        }}
+      >
         {session.data && session.data.user && session.data.user.image ? (
           <Avatar className="w-6 h-6 cursor-pointer">
             <AvatarImage src={session.data?.user?.image ?? ''} alt="@shadcn" />
@@ -48,16 +53,22 @@ export default function UserNav() {
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem className="text-sm p-0" onClick={() => {
-            setOpen(false)
-          }}>
+          <DropdownMenuItem
+            className="text-sm p-0"
+            onClick={() => {
+              setOpen(false)
+            }}
+          >
             <ProgressBarLink href="/settings" className="w-full h-full px-2 py-1.5">
               {t('profile')}
             </ProgressBarLink>
           </DropdownMenuItem>
-          <DropdownMenuItem className="text-sm  p-0" onClick={() => {
-            setOpen(false)
-          }}>
+          <DropdownMenuItem
+            className="text-sm  p-0"
+            onClick={() => {
+              setOpen(false)
+            }}
+          >
             <ProgressBarLink href="/settings/account" className="w-full h-full px-2 py-1.5">
               {t('account')}
             </ProgressBarLink>

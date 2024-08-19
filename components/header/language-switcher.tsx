@@ -1,24 +1,33 @@
 'use client'
+import { useGlobalLoading } from '@/context/global-loading-context'
 import { usePathname, useRouter } from '@/navigation'
 import { useLocale } from 'next-intl'
+import { startTransition } from 'react'
 
 export default function LanguageSwitcher() {
   const localeActive = useLocale()
   const router = useRouter()
   const pathname = usePathname()
+  const { setVisible } = useGlobalLoading()
   const onChangeLanguage = () => {
     const nextLocale = localeActive === 'en' ? 'zh' : 'en'
-    router.replace(pathname, {
-      locale: nextLocale,
-      scroll: false,
+    setVisible(true)
+    startTransition(() => {
+      router.replace(pathname, {
+        locale: nextLocale,
+        scroll: false,
+      })
+      setVisible(false)
     })
   }
   return (
-    <span
-      className="text-sm hover:scale-[1.15] active:scale-105 transition-all cursor-pointer h-6 leading-6"
-      onClick={onChangeLanguage}
-    >
-      {localeActive === 'en' ? 'EN' : 'ZH'}
-    </span>
+    <>
+      <span
+        className="text-sm hover:scale-[1.15] active:scale-105 transition-all cursor-pointer h-6 leading-6"
+        onClick={onChangeLanguage}
+      >
+        {localeActive === 'en' ? 'EN' : 'ZH'}
+      </span>
+    </>
   )
 }
