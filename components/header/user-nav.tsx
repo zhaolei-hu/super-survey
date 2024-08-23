@@ -12,15 +12,32 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { ProgressBarLink } from '@/components/progress-bar'
 import { signOut, useSession } from 'next-auth/react'
 import { useTranslations } from 'next-intl'
+import { useEffect, useState } from 'react'
 export default function UserNav() {
   const session = useSession()
+  const [open, setOpen] = useState(false)
   const t = useTranslations('UserNav')
   const handleLogOut = async () => {
     await signOut()
   }
+  const closeDropdownMenu = () => {
+    open && setOpen(false)
+  }
+  useEffect(() => {
+    document.addEventListener('click', closeDropdownMenu)
+    return () => {
+      document.removeEventListener('click', closeDropdownMenu)
+    }
+  })
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
+    <DropdownMenu open={open}>
+      <DropdownMenuTrigger
+        asChild
+        onClick={(event) => {
+          event.stopPropagation()
+          setOpen(true)
+        }}
+      >
         {session.data && session.data.user && session.data.user.image ? (
           <Avatar className="w-6 h-6 cursor-pointer">
             <AvatarImage src={session.data?.user?.image ?? ''} alt="@shadcn" />

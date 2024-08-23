@@ -10,6 +10,9 @@
     "desc": "抱歉，我们找不到您正在访问的页面",
     "back": "返回首页"
   },
+  "GlobalLoading": {
+    "desc": "切换中..."
+  },
   "Auth": {
     "title": "超级问卷",
     "desc": "一个问卷调查平台，拥有丰富字段类型、逻辑配置、可视化管理，且支持独立部署",
@@ -52,9 +55,29 @@
     }
   },
   "Overview": {
-    "title": "仪表盘"
+    "title": "仪表盘",
+    "search": "查询",
+    "cards": {
+      "surveys": "问卷总数",
+      "ongoing_surveys": "进行中的问卷数",
+      "views": "浏览数",
+      "submissions": "提交数"
+    },
+    "chart": "问卷趋势",
+    "record": "问卷记录"
   },
   "Surveys": {
-    "title": "问卷"
+    "title": "问卷",
+    "status": {
+      "placeholder": "选择状态",
+      "all": "全部状态",
+      "unpublish": "待发布",
+      "ongoing": "进行中",
+      "finish": "已完成"
+    }
+  },
+  "Date": {
+    "placeholder": "选择日期",
+    "format": "yyyy/MM/dd"
   }
 }

@@ -12,6 +12,7 @@ import Header from '@/components/header/header'
 import { HeaderMenuContextProvider } from '@/context/header-menu-context'
 import { SessionProvider } from 'next-auth/react'
 import { ProgressBarContextProvider } from '@/context/progress-bar-context'
+import { GlobalLoadingContextProvider } from '@/context/global-loading-context'
 
 type Props = {
   params: { locale: string }
@@ -54,17 +55,19 @@ export default async function LocaleLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <SessionProvider>
-              <ProgressBarContextProvider>
+            <GlobalLoadingContextProvider>
+              <SessionProvider>
                 <HeaderMenuContextProvider>
-                  <main className="flex flex-col">
-                    <Header />
-                    {children}
-                    <Toaster />
-                  </main>
+                  <ProgressBarContextProvider>
+                    <main className="flex flex-col w-full h-full">
+                      <Header />
+                      {children}
+                      <Toaster />
+                    </main>
+                  </ProgressBarContextProvider>
                 </HeaderMenuContextProvider>
-              </ProgressBarContextProvider>
-            </SessionProvider>
+              </SessionProvider>
+            </GlobalLoadingContextProvider>
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>
