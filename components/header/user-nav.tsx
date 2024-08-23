@@ -12,20 +12,29 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { ProgressBarLink } from '@/components/progress-bar'
 import { signOut, useSession } from 'next-auth/react'
 import { useTranslations } from 'next-intl'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 export default function UserNav() {
   const session = useSession()
   const [open, setOpen] = useState(false)
   const t = useTranslations('UserNav')
   const handleLogOut = async () => {
-    setOpen(false)
     await signOut()
   }
+  const closeDropdownMenu = () => {
+    open && setOpen(false)
+  }
+  useEffect(() => {
+    document.addEventListener('click', closeDropdownMenu)
+    return () => {
+      document.removeEventListener('click', closeDropdownMenu)
+    }
+  })
   return (
     <DropdownMenu open={open}>
       <DropdownMenuTrigger
         asChild
-        onClick={() => {
+        onClick={(event) => {
+          event.stopPropagation()
           setOpen(true)
         }}
       >
@@ -53,22 +62,12 @@ export default function UserNav() {
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem
-            className="text-sm p-0"
-            onClick={() => {
-              setOpen(false)
-            }}
-          >
+          <DropdownMenuItem className="text-sm p-0">
             <ProgressBarLink href="/settings" className="w-full h-full px-2 py-1.5">
               {t('profile')}
             </ProgressBarLink>
           </DropdownMenuItem>
-          <DropdownMenuItem
-            className="text-sm  p-0"
-            onClick={() => {
-              setOpen(false)
-            }}
-          >
+          <DropdownMenuItem className="text-sm  p-0">
             <ProgressBarLink href="/settings/account" className="w-full h-full px-2 py-1.5">
               {t('account')}
             </ProgressBarLink>

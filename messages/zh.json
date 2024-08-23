@@ -67,7 +67,14 @@
     "record": "问卷记录"
   },
   "Surveys": {
-    "title": "问卷"
+    "title": "问卷",
+    "status": {
+      "placeholder": "选择状态",
+      "all": "全部状态",
+      "unpublish": "待发布",
+      "ongoing": "进行中",
+      "finish": "已完成"
+    }
   },
   "Date": {
     "placeholder": "选择日期",

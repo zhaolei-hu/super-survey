@@ -59,7 +59,7 @@
     "search": "Search",
     "cards": {
       "surveys": "Total Surveys",
-      "ongoing_surveys": "Ongoing Surveys",
+      "ongoing_surveys": "In Progress Surveys",
       "views": "views",
       "submissions": "submissions"
     },
@@ -67,7 +67,14 @@
     "record": "Surveys Records"
   },
   "Surveys": {
-    "title": "Surveys"
+    "title": "Surveys",
+    "status": {
+      "placeholder": "Select a status",
+      "all": "All Status",
+      "unpublish": "Unpublished",
+      "ongoing": "In Progress",
+      "finish": "Finished"
+    }
   },
   "Date": {
     "placeholder": "Pick a date",
