@@ -59,7 +59,7 @@ export default async function LocaleLayout({
               <SessionProvider>
                 <HeaderMenuContextProvider>
                   <ProgressBarContextProvider>
-                    <main className="flex flex-col">
+                    <main className="flex flex-col w-full h-full">
                       <Header />
                       {children}
                       <Toaster />

@@ -56,7 +56,15 @@
   },
   "Overview": {
     "title": "Dashboard",
-    "search": "Search"
+    "search": "Search",
+    "cards": {
+      "surveys": "Total Surveys",
+      "ongoing_surveys": "Ongoing Surveys",
+      "views": "views",
+      "submissions": "submissions"
+    },
+    "chart": "Surveys Trend",
+    "record": "Surveys Records"
   },
   "Surveys": {
     "title": "Surveys"

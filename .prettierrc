@@ -4,7 +4,6 @@
   "useTabs": false,
   "semi": false,
   "singleQuote": true,
-  "TrailingCooma": "none",
   "bracketSpacing": true,
   "arrowParens": "always"
 }

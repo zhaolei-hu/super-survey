@@ -38,9 +38,15 @@ export const ProgressBarContextProvider = ({ children }: ProgressBarContextProvi
       <AnimatePresence onExitComplete={progress.reset}>
         {progress.state !== 'complete' && (
           <motion.div
-            style={{ width }}
+            style={{
+              width,
+              // 放到className上容易不生效，问题来源未知，猜测与motion结合问题
+              // 将这些放到这里style上
+              height: '4px',
+              backgroundColor: 'rgba(14, 165, 233, 0.5)',
+            }}
             exit={{ opacity: 0 }}
-            className="fixed top-0 h-1 bg-sky-500 z-[100]"
+            className="fixed top-0 z-[100]"
           />
         )}
       </AnimatePresence>
