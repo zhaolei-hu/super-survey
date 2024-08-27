@@ -86,3 +86,8 @@
   }
 }
 
+@layer base {
+  .ellipsis {
+    @apply overflow-hidden text-ellipsis break-all whitespace-nowrap;
+  }
+}

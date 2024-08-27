@@ -7,6 +7,7 @@ import { Label } from '@/components/ui/label'
 import { useTranslations } from 'next-intl'
 import { ChangeEvent, useState } from 'react'
 import { FaSpinner, FaGithub } from 'react-icons/fa'
+import { MdOutlineEmail } from 'react-icons/md'
 import { useToast } from '@/components/ui/use-toast'
 import { ToastAction } from '@/components/ui/toast'
 export default function AuthForm() {
@@ -93,7 +94,7 @@ export default function AuthForm() {
           {isLoading ? (
             <FaSpinner className="mr-2 h-4 w-4 animate-spin" />
           ) : (
-            <FaGithub className="mr-2 h-4 w-4" />
+            <MdOutlineEmail className="mr-2 h-4 w-4" />
           )}{' '}
           {t('sign_in')}
         </Button>

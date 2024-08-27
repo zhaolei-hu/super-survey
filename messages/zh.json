@@ -74,6 +74,19 @@
       "unpublish": "待发布",
       "ongoing": "进行中",
       "finish": "已完成"
+    },
+    "surveyItem": {
+      "updateAt": "更新于",
+      "views": "浏览数",
+      "submissions": "提交数",
+      "today_submissions": "今日提交",
+      "update": "更新",
+      "data": "数据",
+      "share": "分享",
+      "delete": "删除",
+      "publish": "发布",
+      "start": "开始",
+      "stop": "停止"
     }
   },
   "Date": {

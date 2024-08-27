@@ -74,6 +74,19 @@
       "unpublish": "Unpublished",
       "ongoing": "In Progress",
       "finish": "Finished"
+    },
+    "surveyItem": {
+      "updateAt": "Updated on",
+      "views": "Views",
+      "submissions": "Submissions",
+      "today_submissions": "Today",
+      "update": "Update",
+      "data": "Data",
+      "share": "Share",
+      "delete": "Delete",
+      "publish": "Publish",
+      "start": "Start",
+      "stop": "Stop"
     }
   },
   "Date": {

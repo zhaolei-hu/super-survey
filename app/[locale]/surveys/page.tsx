@@ -8,6 +8,7 @@ import {
 } from '@/components/ui/select'
 import { useTranslations } from 'next-intl'
 import { useState } from 'react'
+import { SurveyItem } from './_components/survey-item'
 
 export default function Page() {
   const t = useTranslations('Surveys')
@@ -16,8 +17,9 @@ export default function Page() {
     setStatus(value)
     // load new
   }
+  const cards = new Array(30).fill(1)
   return (
-    <div className="flex flex-col p-10 space-y-6 w-full max-w-[1280px] mx-auto">
+    <div className="flex flex-col p-10 space-y-10 w-full max-w-[1280px] mx-auto">
       {/* search box */}
       <div className="flex items-center justify-between">
         <h2 className="text-2xl font-bold tracking-tight">{t('title')}</h2>
@@ -32,6 +34,12 @@ export default function Page() {
             <SelectItem value="finished">{t('status.finish')}</SelectItem>
           </SelectContent>
         </Select>
+      </div>
+      {/* cards */}
+      <div className="grid grid-cols-3 gap-4">
+        {cards.map((_, index) => (
+          <SurveyItem key={index} />
+        ))}
       </div>
     </div>
   )
