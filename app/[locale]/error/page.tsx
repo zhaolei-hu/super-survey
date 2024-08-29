@@ -1,9 +1,9 @@
 'use client'
 import { TiArrowLeft } from 'react-icons/ti'
 import { Button } from '@/components/ui/button'
-import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { useSearchParams } from 'next/navigation'
+import { ProgressBarLink } from '@/components/progress-bar'
 enum Error {
   Configuration = 'Configuration',
   AccessDenied = 'AccessDenied',
@@ -27,7 +27,7 @@ export default function Page() {
           className="text-purple-500 font-medium text-base hover:text-purple-500 w-[160px]"
         >
           <TiArrowLeft className="w-5 h-5 mr-2" />
-          <Link href="/">Back to home</Link>
+          <ProgressBarLink href="/">Back to home</ProgressBarLink>
         </Button>
       </div>
     </div>

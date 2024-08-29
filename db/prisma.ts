@@ -19,41 +19,41 @@ const prismaClientSingleton = () => {
   })
   const adapter = new PrismaNeon(neon)
   const prismaClient = new PrismaClient({ adapter })
-  const modelMap = {
-    User: prismaClient.user,
-    Account: prismaClient.account,
-    Session: prismaClient.session,
-    VerificationToken: prismaClient.verificationToken,
-    Authenticator: prismaClient.authenticator,
-  }
+  // const modelMap = {
+  //   User: prismaClient.user,
+  //   Account: prismaClient.account,
+  //   Session: prismaClient.session,
+  //   VerificationToken: prismaClient.verificationToken,
+  //   Authenticator: prismaClient.authenticator,
+  // }
   return prismaClient.$extends({
     query: {
-      $allModels: {
-        async delete({ model, args, query }) {
-          if (notRequireSoftDeleteModels.includes(model)) {
-            return query(args)
-          }
-          const res = await (modelMap[model] as any).update({
-            ...args,
-            data: {
-              deleted: true,
-            },
-          })
-          return res
-        },
-        async deleteMany({ model, args, query }) {
-          if (notRequireSoftDeleteModels.includes(model)) {
-            return query(args)
-          }
-          const res = await (modelMap[model] as any).updateMany({
-            ...args,
-            data: {
-              deleted: true,
-            },
-          })
-          return res
-        },
-      },
+      // $allModels: {
+      //   async delete({ model, args, query }) {
+      //     if (notRequireSoftDeleteModels.includes(model)) {
+      //       return query(args)
+      //     }
+      //     const res = await (modelMap[model] as any).update({
+      //       ...args,
+      //       data: {
+      //         deleted: true,
+      //       },
+      //     })
+      //     return res
+      //   },
+      //   async deleteMany({ model, args, query }) {
+      //     if (notRequireSoftDeleteModels.includes(model)) {
+      //       return query(args)
+      //     }
+      //     const res = await (modelMap[model] as any).updateMany({
+      //       ...args,
+      //       data: {
+      //         deleted: true,
+      //       },
+      //     })
+      //     return res
+      //   },
+      // },
       // filter deleted rows
       $allOperations({ model, operation, args, query }) {
         if (notRequireSoftDeleteModels.includes(model as string)) {

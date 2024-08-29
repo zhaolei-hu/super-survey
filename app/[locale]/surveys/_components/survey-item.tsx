@@ -7,50 +7,51 @@ import { BsBrush, BsArrowUpRight, BsArrowBarUp, BsCaretRight } from 'react-icons
 import { FiBarChart } from 'react-icons/fi'
 import { CiStop1 } from 'react-icons/ci'
 import { AiOutlineDelete } from 'react-icons/ai'
-export function SurveyItem() {
+import { SurveyActionEnum } from '@/enums/enums'
+export function SurveyItem({ handleAction }: { handleAction: (action: SurveyActionEnum) => void }) {
   const t = useTranslations('Surveys.surveyItem')
   const status = useTranslations('Surveys.status')
   const surveyActions = useMemo(() => {
     const updateAction = {
-      label: t('upudate'),
+      label: t('update'),
       icon: <BsBrush />,
-      type: 'update',
+      action: SurveyActionEnum.UPDATE,
       disabled: false,
     }
     const dataAction = {
       label: t('data'),
       icon: <FiBarChart />,
-      type: 'data',
+      action: SurveyActionEnum.DATA,
       disabled: false,
     }
     const shareAction = {
       label: t('share'),
       icon: <BsArrowUpRight />,
-      type: 'share',
+      action: SurveyActionEnum.SHARE,
       disabled: false,
     }
     const deleteAction = {
       label: t('delete'),
       icon: <AiOutlineDelete />,
-      type: 'delete',
+      action: SurveyActionEnum.DELETE,
       disabled: false,
     }
     const publishAction = {
       label: t('publish'),
       icon: <BsArrowBarUp />,
-      type: 'publish',
+      action: SurveyActionEnum.PUBLISH,
       disabled: false,
     }
     const startAction = {
       label: t('start'),
       icon: <BsCaretRight />,
-      type: 'start',
+      action: SurveyActionEnum.START,
       disabled: false,
     }
     const stopAction = {
       label: t('stop'),
       icon: <CiStop1 />,
-      type: 'stop',
+      action: SurveyActionEnum.STOP,
       disabled: false,
     }
     const unPublishedActions = [
@@ -94,10 +95,16 @@ export function SurveyItem() {
       <div className="my-2 w-full h-[1px] bg-gray-500/5"></div>
       <div className="flex justify-between items-center space-x-1">
         {surveyActions.map((item) => (
-          <TooltipProvider key={item.type}>
+          <TooltipProvider key={item.action}>
             <Tooltip>
               <TooltipTrigger asChild>
-                <Button disabled={item.disabled} variant="ghost">
+                <Button
+                  onClick={() => {
+                    handleAction(item.action)
+                  }}
+                  disabled={item.disabled}
+                  variant="ghost"
+                >
                   {item.icon}
                 </Button>
               </TooltipTrigger>

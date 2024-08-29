@@ -18,7 +18,7 @@ const authMiddleware = auth((req) => {
   return NextResponse.redirect(new URL(req.nextUrl.origin))
 })
 // not need auth
-const publicPages = ['/', '/error']
+const publicPages = ['/', '/error', '/feedback']
 export default function middleware(req: NextRequest) {
   const publicPathnameRegex = RegExp(
     `^(/(${locales.join('|')}))?(${publicPages.flatMap((p) => (p === '/' ? ['', '/'] : p)).join('|')})/?$`,

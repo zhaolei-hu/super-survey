@@ -87,6 +87,11 @@
       "publish": "发布",
       "start": "开始",
       "stop": "停止"
+    },
+    "deleteNotice": {
+      "title": "注意！",
+      "desc": "该操作无法撤回，确认是否删除？",
+      "action": "删除"
     }
   },
   "Date": {

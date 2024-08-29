@@ -19,13 +19,20 @@ export default function Header() {
     }
     return true
   }, [activeLocale, pathname])
+  const isFeedbackPage = useMemo(() => {
+    return pathname.includes('/feedback')
+  }, [pathname])
   return (
     <header className="w-full sticky top-0 bg-background z-10">
       <div className="w-full h-14 flex box-border items-center justify-between px-8 border-b">
-        {!isAuthPage && session.data && session.data.user ? <HeaderLeft /> : <div></div>}
+        {!isAuthPage && !isFeedbackPage && session.data && session.data.user ? (
+          <HeaderLeft />
+        ) : (
+          <div></div>
+        )}
         {/* <HeaderLeft /> */}
         <div className="flex items-center space-x-4">
-          {session.data && session.data.user && <UserNav />}
+          {!isFeedbackPage && session.data && session.data.user && <UserNav />}
           <LanguageSwitcher />
           <ThemeSwitcher />
         </div>

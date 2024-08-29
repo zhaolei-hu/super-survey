@@ -9,13 +9,42 @@ import {
 import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 import { SurveyItem } from './_components/survey-item'
+import { SurveyActionEnum } from '@/enums/enums'
+import { useToast } from '@/components/ui/use-toast'
+import { ToastAction } from '@/components/ui/toast'
 
 export default function Page() {
+  const { toast } = useToast()
   const t = useTranslations('Surveys')
   const [status, setStatus] = useState('all')
   const handleSelectValueChange = (value: string) => {
     setStatus(value)
     // load new
+  }
+  // action
+  const handleAction = (action: SurveyActionEnum) => {
+    switch (action) {
+      case SurveyActionEnum.UPDATE:
+        break
+      case SurveyActionEnum.DATA:
+        break
+      case SurveyActionEnum.PUBLISH:
+        break
+      case SurveyActionEnum.DELETE:
+        toast({
+          variant: 'destructive',
+          title: t('deleteNotice.title'),
+          description: t('deleteNotice.desc'),
+          action: <ToastAction altText="delete">{t('deleteNotice.action')}</ToastAction>,
+        })
+        break
+      case SurveyActionEnum.SHARE:
+        break
+      case SurveyActionEnum.START:
+        break
+      case SurveyActionEnum.STOP:
+        break
+    }
   }
   const cards = new Array(30).fill(1)
   return (
@@ -38,7 +67,12 @@ export default function Page() {
       {/* cards */}
       <div className="grid grid-cols-3 gap-4">
         {cards.map((_, index) => (
-          <SurveyItem key={index} />
+          <SurveyItem
+            key={index}
+            handleAction={(action: SurveyActionEnum) => {
+              handleAction(action /** , 数据id */)
+            }}
+          />
         ))}
       </div>
     </div>

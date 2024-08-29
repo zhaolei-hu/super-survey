@@ -87,6 +87,11 @@
       "publish": "Publish",
       "start": "Start",
       "stop": "Stop"
+    },
+    "deleteNotice": {
+      "title": "WARNNING!",
+      "desc": "This operation cannot be undone. Are you sure you want to delete it?",
+      "action": "DELETE"
     }
   },
   "Date": {
