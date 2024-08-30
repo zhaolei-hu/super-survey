@@ -75,6 +75,7 @@
       "ongoing": "进行中",
       "finish": "已完成"
     },
+    "create": "新建表单",
     "surveyItem": {
       "updateAt": "更新于",
       "views": "浏览数",

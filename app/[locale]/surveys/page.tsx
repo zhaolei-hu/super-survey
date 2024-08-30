@@ -12,6 +12,10 @@ import { SurveyItem } from './_components/survey-item'
 import { SurveyActionEnum } from '@/enums/enums'
 import { useToast } from '@/components/ui/use-toast'
 import { ToastAction } from '@/components/ui/toast'
+import { buttonVariants } from '@/components/ui/button'
+import { FiPlus } from 'react-icons/fi'
+import { cn } from '@/lib/utils'
+import { Link } from '@/navigation'
 
 export default function Page() {
   const { toast } = useToast()
@@ -52,17 +56,23 @@ export default function Page() {
       {/* search box */}
       <div className="flex items-center justify-between">
         <h2 className="text-2xl font-bold tracking-tight">{t('title')}</h2>
-        <Select value={status} onValueChange={handleSelectValueChange}>
-          <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder={t('status.placeholder')} />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="all">{t('status.all')}</SelectItem>
-            <SelectItem value="unPublished">{t('status.unpublish')}</SelectItem>
-            <SelectItem value="ongoing">{t('status.ongoing')}</SelectItem>
-            <SelectItem value="finished">{t('status.finish')}</SelectItem>
-          </SelectContent>
-        </Select>
+        <div className="flex items-center space-x-4">
+          <Select value={status} onValueChange={handleSelectValueChange}>
+            <SelectTrigger className="w-[180px]">
+              <SelectValue placeholder={t('status.placeholder')} />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">{t('status.all')}</SelectItem>
+              <SelectItem value="unPublished">{t('status.unpublish')}</SelectItem>
+              <SelectItem value="ongoing">{t('status.ongoing')}</SelectItem>
+              <SelectItem value="finished">{t('status.finish')}</SelectItem>
+            </SelectContent>
+          </Select>
+          <Link href="/surveys/create" target="_blank" prefetch className={cn(buttonVariants())}>
+            <FiPlus className="w-4 h-4 mr-2" />
+            {t('create')}
+          </Link>
+        </div>
       </div>
       {/* cards */}
       <div className="grid grid-cols-3 gap-4">

@@ -75,6 +75,7 @@
       "ongoing": "In Progress",
       "finish": "Finished"
     },
+    "create": "Create New",
     "surveyItem": {
       "updateAt": "Updated on",
       "views": "Views",
