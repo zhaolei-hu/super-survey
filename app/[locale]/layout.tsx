@@ -8,7 +8,6 @@ const fontSans = FontSans({
 })
 import { ThemeProvider } from '@/components/theme-provider'
 import { Toaster } from '@/components/ui/toaster'
-import Header from '@/components/header/header'
 import { HeaderMenuContextProvider } from '@/context/header-menu-context'
 import { SessionProvider } from 'next-auth/react'
 import { ProgressBarContextProvider } from '@/context/progress-bar-context'
@@ -60,7 +59,6 @@ export default async function LocaleLayout({
                 <HeaderMenuContextProvider>
                   <ProgressBarContextProvider>
                     <main className="flex flex-col w-full h-full">
-                      <Header />
                       {children}
                       <Toaster />
                     </main>
